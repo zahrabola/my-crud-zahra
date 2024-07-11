@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
-import axios from 'axios';
+import axios from "axios";
 ///http://localhost:4000/users
 const Users = () => {
- const [users] = useState([
+  const [users, setUsersList] = useState([
     /*
 
     {
@@ -30,37 +30,23 @@ const Users = () => {
             bs: "harness real-time e-markets"
         }
     } */
- ])
+  ]);
+
+  useEffect(() => {
+    getAllUsers();
+  }, []);
 
 
- useEffect(() => {
-    
-    return () => {
-        
-    };
- }, []);
-
- 
- const getAllUsers = async () => {
-   
- try {
-    const response = await axios.get('http://localhost:4000/users')
-    if(response){
-        console.log(response)
-    }
- }
-
- catch(error) {
-
- }
- }
-
-
-
-
-
-
-
+  //getting user from json
+  const getAllUsers = async () => {
+    try {
+      const response = await axios.get("http://localhost:4000/users");
+      if (response) {
+       /// console.log(response);
+       setUsersList(response.data)
+      }
+    } catch (error) {}
+  };
 
   return (
     <div className="userspage">
@@ -68,8 +54,8 @@ const Users = () => {
         <h1>Crud Operation</h1>
         <h3>React, Prime React, Json Server and Axios</h3>
         <div className="userslist">
-          <DataTable value={users}>
-            <Column field="name" header="Name"></Column>
+          <DataTable value={users}  stripedRows   >
+            <Column field="name" header="Name" className="p-2" ></Column>
             <Column field="username" header="Username"></Column>
             <Column field="email" header="Email Adress"></Column>
             <Column field="phone" header="Phone Number"></Column>
