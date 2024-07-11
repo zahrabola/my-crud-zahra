@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import "primereact/resources/themes/lara-light-cyan/theme.css";
 @import "primereact/resources/themes/lara-light-indigo/theme.css";
 @import "primereact/resources/primereact.min.css";                 
 @import "primeicons/primeicons.css";
 @import 'bootstrap/dist/css/bootstrap.css';
+@import 'primeflex/primeflex.css';
 
 
 *{
@@ -38,7 +38,9 @@ body{
 .userspage .userslist table .btn{
   margin: 0 5px;
 }
-
+.dialogheader{
+  padding-left: 20px;
+}
 .userspage .addNewUser{
   text-align: right;
   margin-bottom: 20px;
@@ -48,6 +50,10 @@ body{
   padding: 0 10px;
 }
 
+.userview{
+  padding: 20px;
+  
+}
 .userview h1{
   margin: 0;
   margin-bottom: 20px;

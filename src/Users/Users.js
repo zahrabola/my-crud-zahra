@@ -3,7 +3,10 @@ import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import axios from "axios";
 import UserActions from "./UserActions";
+import { Dialog } from "primereact/dialog";
+import ViewUsers from "./ViewUsers";
 ///http://localhost:4000/users
+
 const Users = () => {
   const [userslist, setUsersList] = useState([
     /*
@@ -33,6 +36,9 @@ const Users = () => {
     } */
   ]);
 
+  const [showViewPage, setShowViewPage] = useState(false);
+  const [selectedIdUser, setSelectedIdUser] = useState(null)
+
   useEffect(() => {
     getAllUsers();
   }, []);
@@ -45,13 +51,17 @@ const Users = () => {
         //console.log(response);
         setUsersList(response.data);
       }
-    } catch (error) {}
+    } catch (error) {
+
+        console.log(error);
+    }
   };
 
   const actionsTemplate = (rowDate) => {
     return (
       <UserActions
         /*userData={rowDate}*/ userData={{ id: rowDate.id, ...rowDate }}
+        setShowViewPage={setShowViewPage} setSelectedIdUser={setSelectedIdUser}
       />
     );
   };
@@ -71,6 +81,15 @@ const Users = () => {
             <Column header="Actions" body={actionsTemplate}></Column>
           </DataTable>
         </div>
+      </div>
+      <div>
+        <Dialog 
+          visible={showViewPage}
+          style={{ width: "70vw"}}
+          onHide={() => setShowViewPage(false)}
+        >
+         <ViewUsers userId={selectedIdUser}/>
+        </Dialog>
       </div>
     </div>
   );
