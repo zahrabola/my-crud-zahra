@@ -37,25 +37,24 @@ const Users = () => {
     getAllUsers();
   }, []);
 
-
   //getting user from json
   const getAllUsers = async () => {
     try {
       const response = await axios.get("http://localhost:4000/users");
       if (response) {
-       /// console.log(response);
-       setUsersList(response.data)
+        //console.log(response);
+        setUsersList(response.data);
       }
     } catch (error) {}
   };
 
-const actionsTemplate = (rowData) => {
+  const actionsTemplate = (rowDate) => {
     return (
-   <UserActions  userData={rowData}/>
-
-    )
-}
-
+      <UserActions
+        /*userData={rowDate}*/ userData={{ id: rowDate.id, ...rowDate }}
+      />
+    );
+  };
 
   return (
     <div className="userspage">
@@ -63,8 +62,8 @@ const actionsTemplate = (rowData) => {
         <h1>Crud Operation</h1>
         <h3>React, Prime React, Json Server and Axios</h3>
         <div className="userslist p-4">
-          <DataTable value={userslist}  stripedRows   >
-            <Column field="name" header="Name" className="p-2" ></Column>
+          <DataTable value={userslist} stripedRows>
+            <Column field="name" header="Name" className="p-2"></Column>
             <Column field="username" header="Username"></Column>
             <Column field="email" header="Email Adress"></Column>
             <Column field="phone" header="Phone Number"></Column>
