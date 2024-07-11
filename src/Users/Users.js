@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
-
+import axios from 'axios';
+///http://localhost:4000/users
 const Users = () => {
  const [users] = useState([
+    /*
 
     {
         id: "1",
@@ -27,18 +29,39 @@ const Users = () => {
             catchPhrase: "Multi-layered client-server neural-net",
             bs: "harness real-time e-markets"
         }
-    }
+    } */
  ])
 
 
-
-
-
-
-
-
+ useEffect(() => {
+    
+    return () => {
+        
+    };
+ }, []);
 
  
+ const getAllUsers = async () => {
+   
+ try {
+    const response = await axios.get('http://localhost:4000/users')
+    if(response){
+        console.log(response)
+    }
+ }
+
+ catch(error) {
+
+ }
+ }
+
+
+
+
+
+
+
+
   return (
     <div className="userspage">
       <div className="container">
