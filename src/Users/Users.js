@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import axios from "axios";
+import UserActions from "./UserActions";
 ///http://localhost:4000/users
 const Users = () => {
-  const [users, setUsersList] = useState([
+  const [userslist, setUsersList] = useState([
     /*
 
     {
@@ -48,18 +49,27 @@ const Users = () => {
     } catch (error) {}
   };
 
+const actionsTemplate = (rowData) => {
+    return (
+   <UserActions  userData={rowData}/>
+
+    )
+}
+
+
   return (
     <div className="userspage">
       <div className="container">
         <h1>Crud Operation</h1>
         <h3>React, Prime React, Json Server and Axios</h3>
-        <div className="userslist">
-          <DataTable value={users}  stripedRows   >
+        <div className="userslist p-4">
+          <DataTable value={userslist}  stripedRows   >
             <Column field="name" header="Name" className="p-2" ></Column>
             <Column field="username" header="Username"></Column>
             <Column field="email" header="Email Adress"></Column>
             <Column field="phone" header="Phone Number"></Column>
             <Column field="website" header="Website"></Column>
+            <Column header="Actions" body={actionsTemplate}></Column>
           </DataTable>
         </div>
       </div>
