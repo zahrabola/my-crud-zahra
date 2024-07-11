@@ -1,17 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const ViewUsers = (props) => {
+const initialUserInfo = {
+    name: '',
+    username: '',
+    email: '',
+    phone: '',
+    website: '',
+    address: {
+        city: '',
+        street: '',
+        suite: '',
+        zipcode: ''
+    },
+    company: {
+        name: '',
+        catchPhrase: '',
+        bs: ''
+    }
+}
 
+const ViewUsers = (props) => {
+  const [userInfo, setUserInfo] = useState(initialUserInfo);
 
   useEffect(() => {
-    fetchUserData()
+    fetchUserData();
   }, []);
-
 
   const fetchUserData = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/users/' + props.userId);
+      const response = await axios.get(
+        "http://localhost:4000/users/" + props.userId
+      );
       if (response) {
         console.log(response.data);
       }
