@@ -14,3 +14,80 @@
 body{
   background-color: #f9f9f9;
 }
+
+
+
+.userspage h1{
+  margin: 20px auto;
+  text-align: center;
+}
+
+.userspage h3{
+  margin: 20px auto;
+  text-align: center;
+}
+
+.userspage .users-list{
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 30px 0;
+}
+
+.userspage .userslist table .btn{
+  margin: 0 5px;
+}
+
+.userspage .addNewUser{
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.userspage .addNewUser .btn i{
+  padding: 0 10px;
+}
+
+.userview h1{
+  margin: 0;
+  margin-bottom: 20px;
+  color:#333;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.userview .box{
+  padding: 30px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.userview p{
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+.userview p span{
+  display: inline-block;
+  min-width: 130px;
+}
+
+.userview p span:first-child{
+  color:#6c757d;
+}
+
+.userview p span:last-child{
+  color:#333;
+  font-weight: bold;
+}
+
+.addview p{
+  border-bottom: none;
+}
+
+.addview p input{
+  margin: 5px 0;
+  font-size: 14px;
+}
