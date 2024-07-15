@@ -24,6 +24,7 @@ const initialUserInfo = {
 const ViewUsers = (props) => {
   const [userInfo, setUserInfo] = useState(initialUserInfo);
 
+  /*
   useEffect(() => {
     fetchUserData();
   }, []);
@@ -41,6 +42,24 @@ const ViewUsers = (props) => {
       console.log(error);
     }
   };
+*/
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+          "http://localhost:4000/users/" + props.userId
+      );
+      if (response) {
+        setUserInfo(response.data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  fetchData(); // Call the function inside the effect
+}, [props.userId]);
 
   return (
     <div>
