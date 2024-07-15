@@ -72,6 +72,11 @@ const Users = () => {
         <h1>Crud Operation</h1>
         <h3>React, Prime React, Json Server and Axios</h3>
         <div className="userslist p-4">
+          <div className="addNewUser">
+            <button className="btn btn-success">
+              Add New User <i className="pi pi-plus"></i>
+            </button>
+          </div>
           <DataTable value={userslist} stripedRows>
             <Column field="name" header="Name" className="p-2"></Column>
             <Column field="username" header="Username"></Column>
