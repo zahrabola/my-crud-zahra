@@ -5,6 +5,7 @@ const UserActions = ({
   setShowViewPage,
   setSelectedIdUser,
   setShowEditPage,
+  deleteUserConfirm
 }) => {
   return (
     <div>
@@ -30,7 +31,7 @@ const UserActions = ({
       </button>
       <button
         className="btn btn-danger"
-        onClick={() => console.log(userData.id)}
+        onClick={() => deleteUserConfirm(userData.id)}
       >
         <i className="pi pi-trash"></i>
       </button>

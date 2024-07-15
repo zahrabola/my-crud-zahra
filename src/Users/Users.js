@@ -7,6 +7,9 @@ import { Dialog } from "primereact/dialog";
 import ViewUsers from "./ViewUsers";
 import AddUser from "./AddUser";
 import EditUser from "./EditUser";
+import { ConfirmDialog } from "primereact/confirmdialog";
+import { confirmDialog } from "primereact/confirmdialog";
+
 ///http://localhost:4000/users
 
 const Users = () => {
@@ -39,11 +42,9 @@ const Users = () => {
   ]);
 
   const [showViewPage, setShowViewPage] = useState(false);
-  const [selectedIdUser, setSelectedIdUser] = useState(null)
-  const [showAddPage, setShowAddPage] = useState(false)
+  const [selectedIdUser, setSelectedIdUser] = useState(null);
+  const [showAddPage, setShowAddPage] = useState(false);
   const [showEditPage, setShowEditPage] = useState(false);
-
-
 
   useEffect(() => {
     getAllUsers();
@@ -58,8 +59,7 @@ const Users = () => {
         setUsersList(response.data);
       }
     } catch (error) {
-
-        console.log(error);
+      console.log(error);
     }
   };
 
@@ -67,10 +67,30 @@ const Users = () => {
     return (
       <UserActions
         /*userData={rowDate}*/ userData={{ id: rowDate.id, ...rowDate }}
-        setShowViewPage={setShowViewPage} setSelectedIdUser={setSelectedIdUser}
+        setShowViewPage={setShowViewPage}
+        setSelectedIdUser={setSelectedIdUser}
         setShowEditPage={setShowEditPage}
+        deleteUserConfirm={deleteUserConfirm}
       />
     );
+  };
+
+  //confirm Dialog - https://primereact.org/confirmdialog/#import
+
+  const deleteUserConfirm = () => {
+    confirmDialog({
+      message: (
+        <div style={{ padding: "20px", margin: "0" }}>
+          {"Are you sure you want to delete this user?"}
+        </div>
+      ),
+      header: (
+        <div style={{ padding: "20px", margin: "0" }}>
+          <h2>Confirmation</h2>
+        </div>
+      ),
+      icon: "pi pi-trash",
+    });
   };
 
   return (
@@ -80,7 +100,10 @@ const Users = () => {
         <h3>React, Prime React, Json Server and Axios</h3>
         <div className="userslist p-4">
           <div className="addNewUser">
-            <button className="btn btn-success"  onClick={() => setShowAddPage(true)}>
+            <button
+              className="btn btn-success"
+              onClick={() => setShowAddPage(true)}
+            >
               Add New User <i className="pi pi-plus"></i>
             </button>
           </div>
@@ -95,37 +118,40 @@ const Users = () => {
         </div>
       </div>
       <div>
-        <Dialog 
+        <Dialog
           visible={showViewPage}
-          style={{ width: "70vw"}}
+          style={{ width: "70vw" }}
           onHide={() => setShowViewPage(false)}
         >
-         <ViewUsers userId={selectedIdUser}/>
+          <ViewUsers userId={selectedIdUser} />
         </Dialog>
-
-
-        <Dialog 
+        <Dialog
           visible={showAddPage}
-          style={{ width: "70vw"}}
+          style={{ width: "70vw" }}
           onHide={() => setShowAddPage(false)}
         >
-         <AddUser  setNewUserAdded={() => {
-          setShowAddPage(false)
-          getAllUsers()
-         }}/>
+          <AddUser
+            setNewUserAdded={() => {
+              setShowAddPage(false);
+              getAllUsers();
+            }}
+          />
         </Dialog>
-
-        <Dialog 
+        <Dialog
           visible={showEditPage}
-          style={{ width: "70vw"}}
+          style={{ width: "70vw" }}
           onHide={() => setShowEditPage(false)}
         >
-        <EditUser userId={selectedIdUser} setUserEdited={() => {
-          setShowEditPage(false)
-          getAllUsers()
-        }}/>
-
+          <EditUser
+            userId={selectedIdUser}
+            setUserEdited={() => {
+              setShowEditPage(false);
+              getAllUsers();
+            }}
+          />
         </Dialog>
+
+        <ConfirmDialog className="confirmdialog"/>
       </div>
     </div>
   );
