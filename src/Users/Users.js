@@ -11,6 +11,7 @@ import { ConfirmDialog } from "primereact/confirmdialog";
 import { confirmDialog } from "primereact/confirmdialog";
 
 ///http://localhost:4000/users
+//https://codesandbox.io/p/sandbox/asyncawait-axios-example-si1zz?file=%2Fsrc%2Findex.js%3A12%2C41-12%2C66
 
 const Users = () => {
   const [userslist, setUsersList] = useState([
@@ -77,7 +78,7 @@ const Users = () => {
 
   //confirm Dialog - https://primereact.org/confirmdialog/#import
 
-  const deleteUserConfirm = ( userId) => {
+  const deleteUserConfirm = (userId) => {
     confirmDialog({
       message: (
         <div style={{ padding: "20px", margin: "0" }}>
@@ -92,18 +93,38 @@ const Users = () => {
       icon: "pi pi-trash",
 
       acceptLabel: (
-        <span className="btn btn-danger"  style={{ padding: "10px 20px", borderRadius: "5px" }}>
+        <span
+          className="btn btn-danger"
+          style={{ padding: "10px 20px", borderRadius: "5px" }}
+        >
           Delete
         </span>
       ),
       rejectLabel: (
-        <span className="btn " style={{ padding: "10px 20px", borderRadius: "5px" }}>
+        <span
+          className="btn "
+          style={{ padding: "10px 20px", borderRadius: "5px" }}
+        >
           Cancel
         </span>
       ),
-      accept: () => console.log(userId),
-
+      // accept: () => console.log(userId),
+      accept: () => deleteUser(userId),
     });
+  };
+
+  const deleteUser = async (userId) => {
+    try {
+      const response = await axios.delete(
+        "http://localhost:4000/users/" + userId
+      );
+      if(response){
+        getAllUsers()
+      }
+
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -164,7 +185,7 @@ const Users = () => {
           />
         </Dialog>
 
-        <ConfirmDialog className="confirmdialog"/>
+        <ConfirmDialog className="confirmdialog" />
       </div>
     </div>
   );
