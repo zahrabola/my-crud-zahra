@@ -5,6 +5,7 @@ import axios from "axios";
 import UserActions from "./UserActions";
 import { Dialog } from "primereact/dialog";
 import ViewUsers from "./ViewUsers";
+import AddUser from "./AddUser";
 ///http://localhost:4000/users
 
 const Users = () => {
@@ -38,6 +39,9 @@ const Users = () => {
 
   const [showViewPage, setShowViewPage] = useState(false);
   const [selectedIdUser, setSelectedIdUser] = useState(null)
+  const [showAddPage, setShowAddPage] = useState(false)
+
+
 
   useEffect(() => {
     getAllUsers();
@@ -73,7 +77,7 @@ const Users = () => {
         <h3>React, Prime React, Json Server and Axios</h3>
         <div className="userslist p-4">
           <div className="addNewUser">
-            <button className="btn btn-success">
+            <button className="btn btn-success"  onClick={() => setShowAddPage(true)}>
               Add New User <i className="pi pi-plus"></i>
             </button>
           </div>
@@ -94,6 +98,13 @@ const Users = () => {
           onHide={() => setShowViewPage(false)}
         >
          <ViewUsers userId={selectedIdUser}/>
+        </Dialog>
+        <Dialog 
+          visible={showAddPage}
+          style={{ width: "70vw"}}
+          onHide={() => setShowAddPage(false)}
+        >
+         <AddUser />
         </Dialog>
       </div>
     </div>
