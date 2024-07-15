@@ -104,7 +104,9 @@ const Users = () => {
           style={{ width: "70vw"}}
           onHide={() => setShowAddPage(false)}
         >
-         <AddUser />
+         <AddUser  setNewUserAdded={() => {
+          setShowAddPage(false)
+         }}/>
         </Dialog>
       </div>
     </div>
