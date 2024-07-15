@@ -40,9 +40,6 @@ const AddUser = (props) => {
     }
   };
 
-  
-
-
   return (
     <div>
       <strong className="dialogheader">Add New User</strong>
@@ -59,7 +56,9 @@ const AddUser = (props) => {
                   className="formcontrol"
                   placeholder="Enter Full name"
                   value={userInfo.name}
-                  onChange={ event => setUserInfo({...userInfo, name:event.target.value})}
+                  onChange={(event) =>
+                    setUserInfo({ ...userInfo, name: event.target.value })
+                  }
                 />
               </p>
             </div>
@@ -71,7 +70,9 @@ const AddUser = (props) => {
                   className="formcontrol"
                   placeholder="Enter UserName"
                   value={userInfo.username}
-                  onChange={ event => setUserInfo({...userInfo, username:event.target.value})}
+                  onChange={(event) =>
+                    setUserInfo({ ...userInfo, username: event.target.value })
+                  }
                 />
               </p>
             </div>
@@ -83,7 +84,9 @@ const AddUser = (props) => {
                   className="formcontrol"
                   placeholder="Enter Email Address"
                   value={userInfo.email}
-                  onChange={ event => setUserInfo({...userInfo, email:event.target.value})}
+                  onChange={(event) =>
+                    setUserInfo({ ...userInfo, email: event.target.value })
+                  }
                 />
               </p>
             </div>
@@ -95,7 +98,9 @@ const AddUser = (props) => {
                   className="formcontrol"
                   placeholder="Enter Phone Number"
                   value={userInfo.phone}
-                  onChange={ event => setUserInfo({...userInfo, phone:event.target.value})}
+                  onChange={(event) =>
+                    setUserInfo({ ...userInfo, phone: event.target.value })
+                  }
                 />
               </p>
             </div>
@@ -107,6 +112,9 @@ const AddUser = (props) => {
                   className="formcontrol"
                   placeholder="Enter Website"
                   value={userInfo.website}
+                  onChange={(event) =>
+                    setUserInfo({ ...userInfo, website: event.target.value })
+                  }
                 />
               </p>
             </div>
@@ -124,6 +132,15 @@ const AddUser = (props) => {
                   className="formcontrol"
                   placeholder="Enter City"
                   value={userInfo.address.city}
+                  onChange={(event) =>
+                    setUserInfo({
+                      ...userInfo,
+                      address: {
+                        ...userInfo.address,
+                        city: event.target.value,
+                      },
+                    })
+                  }
                 />
               </p>
             </div>
@@ -135,6 +152,15 @@ const AddUser = (props) => {
                   className="formcontrol"
                   placeholder="Enter Street Name"
                   value={userInfo.address.street}
+                  onChange={(event) =>
+                    setUserInfo({
+                      ...userInfo,
+                      address: {
+                        ...userInfo.address,
+                        street: event.target.value,
+                      },
+                    })
+                  }
                 />
               </p>
             </div>
@@ -146,6 +172,15 @@ const AddUser = (props) => {
                   className="formcontrol"
                   placeholder="Enter Suite"
                   value={userInfo.address.suite}
+                  onChange={(event) =>
+                    setUserInfo({
+                      ...userInfo,
+                      address: {
+                        ...userInfo.address,
+                        suite: event.target.value,
+                      },
+                    })
+                  }
                 />
               </p>
             </div>
@@ -157,6 +192,15 @@ const AddUser = (props) => {
                   className="formcontrol"
                   placeholder="Enter ZipCode"
                   value={userInfo.address.zipcode}
+                  onChange={(event) =>
+                    setUserInfo({
+                      ...userInfo,
+                      address: {
+                        ...userInfo.address,
+                        zipcode: event.target.value,
+                      },
+                    })
+                  }
                 />
               </p>
             </div>
@@ -174,6 +218,15 @@ const AddUser = (props) => {
                   className="formcontrol"
                   placeholder="Enter Company Name"
                   value={userInfo.company.name}
+                  onChange={(event) =>
+                    setUserInfo({
+                      ...userInfo,
+                      company: {
+                        ...userInfo.company,
+                        name: event.target.value,
+                      },
+                    })
+                  }
                 />
               </p>
             </div>
@@ -185,6 +238,15 @@ const AddUser = (props) => {
                   className="formcontrol"
                   placeholder="Enter Company Catch Phrase"
                   value={userInfo.company.catchPhrase}
+                  onChange={(event) =>
+                    setUserInfo({
+                      ...userInfo,
+                      company: {
+                        ...userInfo.company,
+                        catchPhrase: event.target.value,
+                      },
+                    })
+                  }
                 />
               </p>
             </div>
@@ -196,6 +258,15 @@ const AddUser = (props) => {
                   className="formcontrol"
                   placeholder="Enter Company BS"
                   value={userInfo.company.bs}
+                  onChange={(event) =>
+                    setUserInfo({
+                      ...userInfo,
+                      company: {
+                        ...userInfo.company,
+                        bs: event.target.value,
+                      },
+                    })
+                  }
                 />
               </p>
             </div>
