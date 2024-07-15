@@ -6,6 +6,7 @@ import UserActions from "./UserActions";
 import { Dialog } from "primereact/dialog";
 import ViewUsers from "./ViewUsers";
 import AddUser from "./AddUser";
+import EditUser from "./EditUser";
 ///http://localhost:4000/users
 
 const Users = () => {
@@ -40,6 +41,7 @@ const Users = () => {
   const [showViewPage, setShowViewPage] = useState(false);
   const [selectedIdUser, setSelectedIdUser] = useState(null)
   const [showAddPage, setShowAddPage] = useState(false)
+  const [showEditPage, setShowEditPage] = useState(false);
 
 
 
@@ -66,6 +68,7 @@ const Users = () => {
       <UserActions
         /*userData={rowDate}*/ userData={{ id: rowDate.id, ...rowDate }}
         setShowViewPage={setShowViewPage} setSelectedIdUser={setSelectedIdUser}
+        setShowEditPage={setShowEditPage}
       />
     );
   };
@@ -99,6 +102,8 @@ const Users = () => {
         >
          <ViewUsers userId={selectedIdUser}/>
         </Dialog>
+
+
         <Dialog 
           visible={showAddPage}
           style={{ width: "70vw"}}
@@ -106,7 +111,20 @@ const Users = () => {
         >
          <AddUser  setNewUserAdded={() => {
           setShowAddPage(false)
+          getAllUsers()
          }}/>
+        </Dialog>
+
+        <Dialog 
+          visible={showEditPage}
+          style={{ width: "70vw"}}
+          onHide={() => setShowEditPage(false)}
+        >
+        <EditUser userId={selectedIdUser} setUserEdited={() => {
+          setShowEditPage(false)
+          getAllUsers()
+        }}/>
+
         </Dialog>
       </div>
     </div>

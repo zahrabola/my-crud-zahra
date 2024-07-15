@@ -1,13 +1,18 @@
 import React from "react";
 
-const UserActions = ({ userData, setShowViewPage, setSelectedIdUser }) => {
+const UserActions = ({
+  userData,
+  setShowViewPage,
+  setSelectedIdUser,
+  setShowEditPage,
+}) => {
   return (
     <div>
       <button
         className="btn btn-success"
         onClick={() => {
           /*console.log(userData.id);*/
-          setSelectedIdUser(userData.id)
+          setSelectedIdUser(userData.id);
           setShowViewPage(true);
         }}
       >
@@ -15,7 +20,11 @@ const UserActions = ({ userData, setShowViewPage, setSelectedIdUser }) => {
       </button>
       <button
         className="btn btn-primary"
-        onClick={() => console.log(userData.id)}
+        onClick={() => {
+          /*console.log(userData.id);*/
+          setSelectedIdUser(userData.id);
+          setShowEditPage(true);
+        }}
       >
         <i className="pi pi-file-edit"></i>
       </button>

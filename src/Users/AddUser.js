@@ -32,7 +32,7 @@ const AddUser = (props) => {
         userInfo
       );
       if (response) {
-        console.log(response.data);
+       // console.log(response.data);
         props.setNewUserAdded();
       }
     } catch (error) {
