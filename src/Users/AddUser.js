@@ -40,6 +40,9 @@ const AddUser = (props) => {
     }
   };
 
+  
+
+
   return (
     <div>
       <strong className="dialogheader">Add New User</strong>
@@ -56,6 +59,7 @@ const AddUser = (props) => {
                   className="formcontrol"
                   placeholder="Enter Full name"
                   value={userInfo.name}
+                  onChange={ event => setUserInfo({...userInfo, name:event.target.value})}
                 />
               </p>
             </div>
@@ -67,37 +71,43 @@ const AddUser = (props) => {
                   className="formcontrol"
                   placeholder="Enter UserName"
                   value={userInfo.username}
+                  onChange={ event => setUserInfo({...userInfo, username:event.target.value})}
                 />
               </p>
             </div>
             <div className="col-sm-12 col-md-6">
               <p>
                 <span>Email Address:</span>
-                <input type="text"
-                 className="formcontrol"
-                 placeholder="Enter Email Address"
-                 value={userInfo.email}
-                 />
+                <input
+                  type="text"
+                  className="formcontrol"
+                  placeholder="Enter Email Address"
+                  value={userInfo.email}
+                  onChange={ event => setUserInfo({...userInfo, email:event.target.value})}
+                />
               </p>
             </div>
             <div className="col-sm-12 col-md-6">
               <p>
                 <span>Phone Number:</span>
-                <input type="text"
-                 className="formcontrol"
-                 placeholder="Enter Phone Number"
-                 value={userInfo.phone}
-                 />
+                <input
+                  type="text"
+                  className="formcontrol"
+                  placeholder="Enter Phone Number"
+                  value={userInfo.phone}
+                  onChange={ event => setUserInfo({...userInfo, phone:event.target.value})}
+                />
               </p>
             </div>
             <div className="col-sm-12 col-md-6">
               <p>
                 <span>Website:</span>
-                <input type="text"
-                 className="formcontrol"
-                 placeholder="Enter Website"
-                 value={userInfo.website}
-                 />
+                <input
+                  type="text"
+                  className="formcontrol"
+                  placeholder="Enter Website"
+                  value={userInfo.website}
+                />
               </p>
             </div>
           </div>
@@ -109,41 +119,45 @@ const AddUser = (props) => {
             <div className="col-sm-12 col-md-6">
               <p>
                 <span>City:</span>
-                <input type="text"
-                 className="formcontrol"
-                 placeholder="Enter City"
-                 value={userInfo.address.city}
-                 />
+                <input
+                  type="text"
+                  className="formcontrol"
+                  placeholder="Enter City"
+                  value={userInfo.address.city}
+                />
               </p>
             </div>
             <div className="col-sm-12 col-md-6">
               <p>
                 <span>Street:</span>
-                <input type="text"
-                 className="formcontrol"
-                 placeholder="Enter Street Name"
-                 value={userInfo.address.street}
-                 />
+                <input
+                  type="text"
+                  className="formcontrol"
+                  placeholder="Enter Street Name"
+                  value={userInfo.address.street}
+                />
               </p>
             </div>
             <div className="col-sm-12 col-md-6">
               <p>
                 <span>Suite:</span>
-                <input type="text"
-                 className="formcontrol"
-                 placeholder="Enter Suite"
-                 value={userInfo.address.suite}
-                 />
+                <input
+                  type="text"
+                  className="formcontrol"
+                  placeholder="Enter Suite"
+                  value={userInfo.address.suite}
+                />
               </p>
             </div>
             <div className="col-sm-12 col-md-6">
               <p>
                 <span>ZIP Code:</span>
-                <input type="text"
-                 className="formcontrol"
-                 placeholder="Enter ZipCode"
-                 value={userInfo.address.zipcode}
-                 />
+                <input
+                  type="text"
+                  className="formcontrol"
+                  placeholder="Enter ZipCode"
+                  value={userInfo.address.zipcode}
+                />
               </p>
             </div>
           </div>
@@ -155,36 +169,42 @@ const AddUser = (props) => {
             <div className="col-sm-12 col-md-6">
               <p>
                 <span>Company Name:</span>
-                <input type="text"
-                 className="formcontrol"
-                 placeholder="Enter Company Name"
-                 value={userInfo.company.name}
-                 />
+                <input
+                  type="text"
+                  className="formcontrol"
+                  placeholder="Enter Company Name"
+                  value={userInfo.company.name}
+                />
               </p>
             </div>
             <div className="col-sm-12 col-md-6">
               <p>
                 <span>Catch Phrase:</span>
-                <input type="text"
-                 className="formcontrol"
-                 placeholder="Enter Company Catch Phrase"
-                 value={userInfo.company.catchPhrase}
-                 />
+                <input
+                  type="text"
+                  className="formcontrol"
+                  placeholder="Enter Company Catch Phrase"
+                  value={userInfo.company.catchPhrase}
+                />
               </p>
             </div>
             <div className="col-sm-12 col-md-6">
               <p>
                 <span>BS:</span>
-                <input type="text"
-                 className="formcontrol"
-                 placeholder="Enter Company BS"
-                 value={userInfo.company.bs}
-                 />
+                <input
+                  type="text"
+                  className="formcontrol"
+                  placeholder="Enter Company BS"
+                  value={userInfo.company.bs}
+                />
               </p>
             </div>
-          
           </div>
         </div>
+
+        <button className="btn btn-success" onClick={() => addNewUser()}>
+          Add New User
+        </button>
       </div>
     </div>
   );
