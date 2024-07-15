@@ -134,12 +134,7 @@ const ViewUsers = (props) => {
                 <span>{userInfo.company.bs}</span>
               </p>
             </div>
-            <div className="col-sm-12 col-md-6">
-              <p>
-                <span>BS:</span>
-                <span>{userInfo.company.bs}</span>
-              </p>
-            </div>
+           
           </div>
         </div>
       </div>
