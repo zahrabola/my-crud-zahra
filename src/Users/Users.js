@@ -77,7 +77,7 @@ const Users = () => {
 
   //confirm Dialog - https://primereact.org/confirmdialog/#import
 
-  const deleteUserConfirm = () => {
+  const deleteUserConfirm = ( userId) => {
     confirmDialog({
       message: (
         <div style={{ padding: "20px", margin: "0" }}>
@@ -90,6 +90,19 @@ const Users = () => {
         </div>
       ),
       icon: "pi pi-trash",
+
+      acceptLabel: (
+        <span className="btn btn-danger"  style={{ padding: "10px 20px", borderRadius: "5px" }}>
+          Delete
+        </span>
+      ),
+      rejectLabel: (
+        <span className="btn " style={{ padding: "10px 20px", borderRadius: "5px" }}>
+          Cancel
+        </span>
+      ),
+     /// accept: () => acceptFunc(),
+
     });
   };
 
