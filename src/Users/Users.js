@@ -101,7 +101,7 @@ const Users = () => {
           Cancel
         </span>
       ),
-     /// accept: () => acceptFunc(),
+      accept: () => console.log(userId),
 
     });
   };
