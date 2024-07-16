@@ -2,7 +2,7 @@
 
 This project is a  CRUD operations in ReactJS, using axios and JSON Server 
 
-![alt text](Screenshot_16-7-2024_103126_localhost.jpeg)
+![alt text](src/Screenshot_16-7-2024_103126_localhost.jpeg)
 
 ### `npm run build`
  Clone this repository to your local machine: https://github.com/zahrabola/my-crud-zahra
