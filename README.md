@@ -3,51 +3,23 @@
 This project is a  CRUD operations in ReactJS, using axios and JSON Server 
 
 ### `npm run build`
+ Clone this repository to your local machine: https://github.com/zahrabola/my-crud-zahra
+ Open a terminal window
+Install node package manager and json-server globally on your system. You can do this by running the following commands in your terminal:
+npm install and npm install -g json-server
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+guide : https://www.dhiwise.com/post/how-to-use-json-server-in-frontend-development 
+Inside Terminal - Command Prompt start the JSON Server to simulate a RESTful API by running the following command:
+json-server --watch db.json --port 4000
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This command will start the JSON Server using the db.json file as the data source and expose it at http://localhost:4000/users#
 
-### `npm run eject`
+Open another terminal window (keeping the first one running,then Start the React application by running the following command:
+npm start \
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The application will be accessible at http://localhost:3000
+The page will reload when you make changes, you may also see any lint errors in the console.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Netlify deployed website -  https://serene-donut-794897.netlify.app/
