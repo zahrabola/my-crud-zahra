@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-/* https://www.youtube.com/watch?v=c1MunmL1a2Q&list=PLxU1KfxEWF_HI571_84l09RSaj2g-qhjs&index=7 */
+/**/
 
 const initialUserInfo = {
   name: "",
