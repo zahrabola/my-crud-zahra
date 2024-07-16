@@ -11,6 +11,7 @@ Install node package manager and json-server globally on your system. You can do
 npm install and npm install -g json-server
 
 guide : https://www.dhiwise.com/post/how-to-use-json-server-in-frontend-development 
+
 Inside Terminal - Command Prompt start the JSON Server to simulate a RESTful API by running the following command:
 json-server --watch db.json --port 4000
 
