@@ -232,11 +232,11 @@
     },
     {
       "id": "661b",
-      "name": "Zahra Bolanle Amoke Olanrewaju",
-      "username": "zagnr",
+      "name": "Zahra  Olanrewaju",
+      "username": "zahra",
       "email": "zahrabola@hotmail.com",
       "phone": "07940999703",
-      "website": "",
+      "website": "https://www.zbolanrewaju.com/",
       "address": {
         "city": "London, Greater London, United Kingdom",
         "street": "Flat 2, Haymans Point, Tyers Street, SE11 5NT",
@@ -244,9 +244,9 @@
         "zipcode": "SE11 5NT"
       },
       "company": {
-        "name": "Paxton",
+        "name": "Display Block",
         "catchPhrase": "mokmlk",
-        "bs": "l;,l;"
+        "bs": "VS"
       }
     }
   ]
