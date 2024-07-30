@@ -15,7 +15,8 @@ Inside Terminal - Command Prompt start the JSON Server to simulate a RESTful API
 json-server --watch db.json --port 4000
 
 
-This command will start the JSON Server using the db.json file as the data source and expose it at http://localhost:4000/users#
+This command will start the JSON Server using the db.json file as the data source and expose it at http://localhost:4000/users
+
 
 Open another terminal window keeping the first one running,then Start the React application by running the following command:
 npm start \
